@@ -24,7 +24,7 @@ class Student extends User {
         if (typeof v !== 'number') {
             throw new TypeError('param year mast be a number');
         }
-        if (v < 2015) {
+        if (v < new Date().getFullYear()-4 || v> new Date().getFullYear()) {
             throw new RangeError('param year mast be bigger 2015');
         }
         this._year = v;
